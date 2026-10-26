@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Introdução ao Flexbox - Aula de CSS</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="flexbox.css">
+</head>
+<body>
+
+  <header>
+    <h1>Introdução ao Flexbox - Aula de CSS</h1>
+    <a href="index.html">⬅ Voltar ao Hub</a>
+  </header>
+
+  <main>
+    <section>
+      <h2>O que é Flexbox?</h2>
+      <p>Flexbox é um modelo de layout do CSS que ajuda a organizar e alinhar elementos dentro de um contêiner. Ele é unidimensional: trabalha principalmente em uma direção por vez, em linha ou em coluna.</p>
+      <p>Para começar, aplique <code>display: flex;</code> ao elemento que contém os itens. Esse elemento vira o <strong>contêiner flexível</strong>; seus filhos diretos viram os <strong>itens flexíveis</strong>.</p>
+      <pre><code>.container {
+  display: flex;
+}</code></pre>
+      <div class="demo flex-basico">
+        <div class="item">Item 1</div><div class="item">Item 2</div><div class="item">Item 3</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Eixo principal e eixo transversal</h2>
+      <p>O Flexbox organiza os itens ao longo de dois eixos. O <strong>eixo principal</strong> acompanha a direção definida por <code>flex-direction</code>. O <strong>eixo transversal</strong> cruza o eixo principal.</p>
+      <p>Por padrão, a direção é uma linha, da esquerda para a direita. Com <code>flex-direction: column;</code>, os itens ficam em coluna.</p>
+      <pre><code>.container {
+  display: flex;
+  flex-direction: column;
+}</code></pre>
+      <div class="demo flex-coluna">
+        <div class="item">Item 1</div><div class="item">Item 2</div><div class="item">Item 3</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Alinhamento e espaçamento</h2>
+      <p><code>justify-content</code> distribui os itens no eixo principal. Já <code>align-items</code> alinha os itens no eixo transversal.</p>
+      <ul>
+        <li><code>justify-content: center;</code> centraliza no eixo principal;</li>
+        <li><code>justify-content: space-between;</code> distribui o espaço entre os itens;</li>
+        <li><code>align-items: center;</code> centraliza no eixo transversal;</li>
+        <li><code>gap</code> define o espaço entre os itens.</li>
+      </ul>
+      <pre><code>.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}</code></pre>
+      <div class="demo flex-alinhamento">
+        <div class="item">Item 1</div><div class="item">Item 2</div><div class="item">Item 3</div>
+      </div>
+      <p>Para centralizar um item nos dois eixos, combine <code>justify-content: center;</code> e <code>align-items: center;</code>.</p>
+    </section>
+
+    <section>
+      <h2>Quebra de linha e tamanho dos itens</h2>
+      <p>Por padrão, os itens tentam ficar em uma única linha. Com <code>flex-wrap: wrap;</code>, eles podem passar para a linha seguinte quando não houver espaço suficiente.</p>
+      <p>A propriedade <code>flex</code> permite que um item cresça para ocupar o espaço disponível. Por exemplo, <code>flex: 1;</code> faz com que os itens dividam esse espaço.</p>
+      <pre><code>.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.item {
+  flex: 1;
+}</code></pre>
+      <div class="demo flex-wrap">
+        <div class="item">Item 1</div><div class="item">Item 2</div><div class="item">Item 3</div><div class="item">Item 4</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Quando usar Flexbox?</h2>
+      <p>Use Flexbox quando precisar alinhar ou distribuir elementos em uma direção, como em menus, grupos de botões, cabeçalhos e cartões em uma linha. Para layouts que precisam controlar linhas e colunas ao mesmo tempo, o CSS Grid pode ser mais adequado.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Desenvolvido por Lucas Siqueira — © 2026</p>
+  </footer>
+
+</body>
+</html>
